@@ -1,0 +1,164 @@
+{
+	"info": {
+	  "name": "Restaurant Management APIs",
+	  "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+	  "_postman_id": "12345-abcd-6789-efgh"
+	},
+	"item": [
+	  {
+		"name": "Restaurants",
+		"item": [
+		  {
+			"name": "Add Restaurant",
+			"request": {
+			  "method": "POST",
+			  "header": [
+				{ "key": "Content-Type", "value": "application/json" }
+			  ],
+			  "body": {
+				"mode": "raw",
+				"raw": "{\n  \"name\": \"Amruttulya\",\n  \"description\": \"Authentic Maharashtrian Thali\",\n  \"address\": \"Pune, Maharashtra\",\n  \"contact_number\": \"9876543210\",\n  \"rating\": 4.5\n}"
+			  },
+			  "url": {
+				"raw": "{{base_url}}/restaurants/add",
+				"host": ["{{base_url}}"],
+				"path": ["restaurants", "add"]
+			  }
+			}
+		  },
+		  {
+			"name": "Get All Restaurants",
+			"request": {
+			  "method": "GET",
+			  "url": {
+				"raw": "{{base_url}}/restaurant/all",
+				"host": ["{{base_url}}"],
+				"path": ["restaurants", "all"]
+			  }
+			}
+		  }
+		]
+	  },
+	  {
+		"name": "Users",
+		"item": [
+		  {
+			"name": "Register User",
+			"request": {
+			  "method": "POST",
+			  "header": [
+				{ "key": "Content-Type", "value": "application/json" }
+			  ],
+			  "body": {
+				"mode": "raw",
+				"raw": "{\n  \"username\": \"rahul123\",\n  \"password\": \"pass123\",\n  \"email\": \"rahul@example.com\",\n  \"phone_number\": \"9876543100\",\n  \"restaurant_id\": 1,\n  \"role\": 0\n}"
+			  },
+			  "url": {
+				"raw": "{{base_url}}/user/register",
+				"host": ["{{base_url}}"],
+				"path": ["users", "register"]
+			  }
+			}
+		  },
+		  {
+			"name": "Login User",
+			"request": {
+			  "method": "POST",
+			  "header": [
+				{ "key": "Content-Type", "value": "application/json" }
+			  ],
+			  "body": {
+				"mode": "raw",
+				"raw": "{\n  \"email\": \"rahul@example.com\",\n  \"password\": \"pass123\"\n}"
+			  },
+			  "url": {
+				"raw": "{{base_url}}/user/login",
+				"host": ["{{base_url}}"],
+				"path": ["users", "login"]
+			  }
+			}
+		  },
+		  {
+			"name": "Get All Users",
+			"request": {
+			  "method": "GET",
+			  "url": {
+				"raw": "{{base_url}}/user/all",
+				"host": ["{{base_url}}"],
+				"path": ["users", "all"]
+			  }
+			}
+		  }
+		]
+	  },
+	  {
+		"name": "Menu Items",
+		"item": [
+		  {
+			"name": "Add Menu Item",
+			"request": {
+			  "method": "POST",
+			  "header": [
+				{ "key": "Content-Type", "value": "application/json" }
+			  ],
+			  "body": {
+				"mode": "raw",
+				"raw": "{\n  \"restaurant_id\": 1,\n  \"name\": \"Puran Poli\",\n  \"description\": \"A sweet flatbread dessert\",\n  \"price\": 120.00,\n  \"category\": \"Dessert\",\n  \"availability\": true\n}"
+			  },
+			  "url": {
+				"raw": "{{base_url}}/menu/add",
+				"host": ["{{base_url}}"],
+				"path": ["menu", "add"]
+			  }
+			}
+		  },
+		  {
+			"name": "Get All Menu Items",
+			"request": {
+			  "method": "GET",
+			  "url": {
+				"raw": "{{base_url}}/menu/all_menu",
+				"host": ["{{base_url}}"],
+				"path": ["menu", "all_menu"]
+			  }
+			}
+		  },
+		  {
+			"name": "Get Menu Items by Restaurant",
+			"request": {
+			  "method": "GET",
+			  "url": {
+				"raw": "{{base_url}}/menu/:restaurant_id",
+				"host": ["{{base_url}}"],
+				"path": ["menu", ":restaurant_id"]
+			  }
+			}
+		  }
+		]
+	  },
+	  {
+		"name": "Cart",
+		"item": [
+		  {
+			"name": "Add to Cart",
+			"request": {
+			  "method": "POST",
+			  "header": [
+				{ "key": "Content-Type", "value": "application/json" }
+			  ],
+			  "body": {
+				"mode": "raw",
+				"raw": "{\n  \"user_id\": 1,\n  \"restaurant_id\": 1,\n  \"item_id\": 1,\n  \"quantity\": 2,\n  \"total_price\": 240.00\n}"
+			  },
+			  "url": {
+				"raw": "{{base_url}}/cart/add",
+				"host": ["{{base_url}}"],
+				"path": ["cart", "add"]
+			  }
+			}
+		  }
+		]
+	  }
+	]
+  }
+  
